@@ -1,10 +1,10 @@
-package com.asda.xpire;
+package com.luketowell.webservices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class XpireApplicationTests {
+class WebservicesApplicationTests {
 
 	@Test
 	void contextLoads() {
