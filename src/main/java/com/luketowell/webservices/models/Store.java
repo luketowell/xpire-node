@@ -1,7 +1,9 @@
 package com.luketowell.webservices.models;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Store {
 
     @Id

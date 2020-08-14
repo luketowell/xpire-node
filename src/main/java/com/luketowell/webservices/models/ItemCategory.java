@@ -1,11 +1,14 @@
 package com.luketowell.webservices.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
-
+@Entity
 public class ItemCategory {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
