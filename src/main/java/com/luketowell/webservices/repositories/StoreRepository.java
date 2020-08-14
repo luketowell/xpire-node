@@ -1,8 +1,7 @@
 package com.luketowell.webservices.repositories;
 
 import com.luketowell.webservices.models.Store;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StoreRepository extends CrudRepository <Store, String> {
-
+public interface StoreRepository extends JpaRepository<Store, String> {
 }
