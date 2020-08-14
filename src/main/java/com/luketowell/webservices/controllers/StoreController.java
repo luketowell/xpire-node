@@ -29,4 +29,10 @@ public class StoreController {
         return storeRepository.findById(id)
                 .orElseThrow(() -> new StoreNotFoundException(id));
     }
+
+    @PostMapping("/new")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Store createNewStore(@RequestBody Store store){
+       return storeRepository.save(store);
+    }
 }
