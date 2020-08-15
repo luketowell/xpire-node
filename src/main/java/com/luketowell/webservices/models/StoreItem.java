@@ -22,7 +22,7 @@ public class StoreItem {
     @Column(name="store_id")
     private String store_id;
 
-    @OneToMany(mappedBy = "store_item")
+    @OneToMany(mappedBy = "store_item_id")
     private Set<StoreItemAction> actions;
 
     public StoreItem() {
