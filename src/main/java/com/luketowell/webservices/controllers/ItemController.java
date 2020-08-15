@@ -12,10 +12,14 @@ public class ItemController {
 
     ItemRepository itemRepository;
 
-    @GetMapping("/{upc}")
-    public Item findItemById(@PathVariable String upc){
-        return itemRepository.findById(upc)
-                .orElseThrow(() -> new ItemNotFoundException(upc));
+    public ItemController(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
+
+    @GetMapping("/{id}")
+    public Item findItemById(@PathVariable String id){
+        return itemRepository.findById(id)
+                .orElseThrow(() -> new ItemNotFoundException(id));
     }
 
     @PostMapping("/new")
