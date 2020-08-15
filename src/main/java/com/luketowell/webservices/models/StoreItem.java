@@ -22,6 +22,9 @@ public class StoreItem {
     @Column(name="store_id")
     private String store_id;
 
+    @OneToMany(mappedBy = "store_item")
+    private Set<StoreItemAction> actions;
+
     public StoreItem() {
     }
 
