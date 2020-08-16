@@ -3,10 +3,12 @@ package com.luketowell.webservices.controllers;
 import com.luketowell.webservices.error.StoreItemActionNotFoundException;
 import com.luketowell.webservices.models.StoreItemAction;
 import com.luketowell.webservices.repositories.StoreItemActionRepository;
+import com.sun.xml.bind.v2.TODO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("actions")
 public class StoreItemActionController {
 
@@ -26,4 +28,6 @@ public class StoreItemActionController {
         return storeItemActionRepository.findById(id)
                 .orElseThrow(() -> new StoreItemActionNotFoundException(id));
     }
+
+    //TODO: Write the new store item action to the DB.
 }

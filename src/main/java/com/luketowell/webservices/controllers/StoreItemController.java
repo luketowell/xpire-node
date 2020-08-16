@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("storeitem")
 public class StoreItemController {
     StoreItemRepository storeItemRepository;
