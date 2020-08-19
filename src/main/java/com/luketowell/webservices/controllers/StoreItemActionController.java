@@ -28,6 +28,4 @@ public class StoreItemActionController {
         return storeItemActionRepository.findById(id)
                 .orElseThrow(() -> new StoreItemActionNotFoundException(id));
     }
-
-    //TODO: Write the new store item action to the DB.
 }
