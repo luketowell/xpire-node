@@ -23,8 +23,10 @@ public class Item {
     @Column(name="expiry")
     private Date expiry;
 
+    @Column(name="category_id")
+    private Long category_id;
     @ManyToOne
-    @JoinColumn(name="category_id", nullable=false)
+    @JoinColumn(name="category_id", nullable=false, insertable = false, updatable = false)
     private ItemCategory category ;
 
     @Column(name="size")
@@ -34,6 +36,16 @@ public class Item {
     private String img_url;
 
     public Item() {
+    }
+
+    public Item(String upc, String name, String description, Date expiry, Long category_id, String size, String img_url) {
+        this.upc = upc;
+        this.name = name;
+        this.description = description;
+        this.expiry = expiry;
+        this.category_id = category_id;
+        this.size = size;
+        this.img_url = img_url;
     }
 
     public Item(String upc, String name, String description, Date expiry, ItemCategory category, String size, String img_url) {
