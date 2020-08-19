@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("storeItemSummary")
+@RequestMapping("storeitemsummary")
 public class StoreItemSummaryController {
 
     StoreItemSummaryRepository storeItemSummaryRepository;
