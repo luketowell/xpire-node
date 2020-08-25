@@ -21,9 +21,9 @@ public class StoreItemAction {
     @Column(name="user_id")
     private String user_id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="status_id")
-    private Status status;
+    @Column(name="status_id")
+    private String status_id;
+
 
     @Column(name="expired_count")
     private Long expired_count;
@@ -31,7 +31,20 @@ public class StoreItemAction {
     @Column(name="update_date")
     private Date update_date;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="status_id", insertable = false, updatable = false)
+    private Status status;
+
     public StoreItemAction() {
+    }
+
+    public StoreItemAction(Long id, Long store_item_id, String user_id, String status_id, Long expired_count, Date update_date) {
+        this.id = id;
+        this.store_item_id = store_item_id;
+        this.user_id = user_id;
+        this.status_id = status_id;
+        this.expired_count = expired_count;
+        this.update_date = update_date;
     }
 
     public StoreItemAction(Long id, Long store_item_id, String user_id, Status status, Long expired_count, Date update_date) {

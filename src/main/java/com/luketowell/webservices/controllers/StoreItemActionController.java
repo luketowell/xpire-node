@@ -28,4 +28,10 @@ public class StoreItemActionController {
         return storeItemActionRepository.findById(id)
                 .orElseThrow(() -> new StoreItemActionNotFoundException(id));
     }
+
+    @PostMapping("/new")
+    @ResponseStatus(HttpStatus.CREATED)
+    public StoreItemAction newStoreItemAction(@RequestBody StoreItemAction body){
+        return storeItemActionRepository.save(body);
+    }
 }
