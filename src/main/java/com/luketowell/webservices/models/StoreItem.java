@@ -35,10 +35,16 @@ public class StoreItem {
     @JoinColumn(name="item_upc")
     private Item item;
 
-    @OneToMany(mappedBy = "store_item_id")
+    @OneToMany(mappedBy = "store_item_id", cascade= CascadeType.ALL)
     private Set<StoreItemAction> actions;
 
     public StoreItem() {
+    }
+
+    public StoreItem(Long id, Date updated_date, Set<StoreItemAction> actions) {
+        this.id = id;
+        this.updated_date = updated_date;
+        this.actions = actions;
     }
 
     public StoreItem(Long id, Long item_upc, String storeId, Date expiry_date, Date created_date, Date updated_date) {
@@ -58,4 +64,6 @@ public class StoreItem {
         this.updated_date = updated_date;
         this.item = item;
     }
+
+
 }
