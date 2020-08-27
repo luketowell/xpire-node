@@ -20,9 +20,6 @@ public class Item {
     @Column(name="description")
     private String description;
 
-    @Column(name="expiry")
-    private Date expiry;
-
     @Column(name="category_id")
     private Long category_id;
     @ManyToOne
@@ -38,21 +35,19 @@ public class Item {
     public Item() {
     }
 
-    public Item(String upc, String name, String description, Date expiry, Long category_id, String size, String img_url) {
+    public Item(String upc, String name, String description, Long category_id, String size, String img_url) {
         this.upc = upc;
         this.name = name;
         this.description = description;
-        this.expiry = expiry;
         this.category_id = category_id;
         this.size = size;
         this.img_url = img_url;
     }
 
-    public Item(String upc, String name, String description, Date expiry, ItemCategory category, String size, String img_url) {
+    public Item(String upc, String name, String description, ItemCategory category, String size, String img_url) {
         this.upc = upc;
         this.name = name;
         this.description = description;
-        this.expiry = expiry;
         this.category = category;
         this.size = size;
         this.img_url = img_url;
