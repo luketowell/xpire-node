@@ -16,7 +16,7 @@ public class StoreItem {
     @Column(name="id")
     private Long id;
 
-    @Column(name="item_upc", updatable = false, insertable = false)
+    @Column(name="item_upc" )
     private Long item_upc;
 
     @Column(name="store_id")
@@ -32,7 +32,7 @@ public class StoreItem {
     private Date updated_date;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="item_upc")
+    @JoinColumn(name="item_upc", updatable = false, insertable = false)
     private Item item;
 
     @OneToMany(mappedBy = "store_item_id", cascade= CascadeType.ALL)
