@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -36,12 +37,12 @@ public class StoreItem {
     private Item item;
 
     @OneToMany(mappedBy = "store_item_id", cascade= CascadeType.ALL)
-    private Set<StoreItemAction> actions;
+    private List<StoreItemAction> actions;
 
     public StoreItem() {
     }
 
-    public StoreItem(Long id, Date updated_date, Set<StoreItemAction> actions) {
+    public StoreItem(Long id, Date updated_date, List<StoreItemAction> actions) {
         this.id = id;
         this.updated_date = updated_date;
         this.actions = actions;
