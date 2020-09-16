@@ -8,6 +8,7 @@ import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
+import java.util.Date;
 import java.util.List;
 
 public interface StoreItemSummaryRepository extends JpaRepository<StoreItemSummary, Long> {
@@ -15,4 +16,6 @@ public interface StoreItemSummaryRepository extends JpaRepository<StoreItemSumma
     List<StoreItemSummary> getStoreItemsByCategoryAndStoreId(@Param("categoryId") Long categoryId, @Param("storeId") String storeId);
 
     List<StoreItemSummary> getStoreItemsByItemUpcAndStoreId(@Param("itemUpc") String itemUpc, @Param("storeId") String storeId );
+
+    List<StoreItemSummary> getStoreItemsByCategoryAndStoreIdAndExpiryDate(@Param("categoryId") Long categoryId, @Param("storeId") String storeId, @Param("expiryDate") String expiryDate);
 }
